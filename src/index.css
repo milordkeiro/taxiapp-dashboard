@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  width: 100%;
+  height: 100%;
+  background: #f8f8f8;
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Nunito", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: #3a3a3a;
+}
+#root {
+  height: 100%;
+}
+.fixed-background {
+  background: url(/assets/img/bg-login.jpg) no-repeat 50% fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.login-img {
+  background: url(/assets/img/login-img.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+  height: 500px;
+}
+.header {
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
+  z-index: 10;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+}
+.logo {
+  height: 50px;
+  padding-left: 10px;
+}
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 110px;
+  height: calc(100% - 80px);
+  background: #fff;
+  z-index: 3;
+  margin-top: 80px;
+  border-radius: 0 0.75rem 0.75rem 0;
+  -webkit-box-shadow: 0 3px 30px rgba(0, 0, 0, 0.1),
+    0 3px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 30px rgba(0, 0, 0, 0.1), 0 3px 20px rgba(0, 0, 0, 0.1);
+}
+.sidebar-container .sidebar-list .sidebar-link.active:after {
+  content: " ";
+  background: #ed7117;
+  border-radius: 10px;
+  position: absolute;
+  width: 6px;
+  height: 90px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.requests-container {
+  width: 100%;
+  margin-top: 30px;
+  padding-right: 30px;
+}
+.request-card {
+  background: #fff;
+  border-radius: calc(0.15rem - 1px);
+  -webkit-box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04),
+    0 1px 6px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.04), 0 1px 6px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 0.75rem;
+  color: #3a3a3a;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr 3fr 1fr 2fr 1fr;
+}
+.requests-header {
+  grid-template-columns: 1fr 3fr 1fr 3fr 1fr 2fr 1fr;
+  padding: 1.5rem;
+}
+.request-card div,
+.requests-header div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .request-card {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
